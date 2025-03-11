@@ -1,6 +1,7 @@
+
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Github } from 'lucide-react'; // Fixed: GitHub -> Github
+import { Github } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -11,7 +12,7 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} MwX. Все права защищены.
           </div>
           <motion.a
-            href="https://github.com/your-github-profile"
+            href="https://github.com/mwxowo" // Замените на свой GitHub профиль
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-mwx-blue transition-colors flex items-center"
