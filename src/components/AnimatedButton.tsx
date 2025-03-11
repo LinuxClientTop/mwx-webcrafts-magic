@@ -2,14 +2,15 @@
 import { ReactNode } from 'react';
 import { motion } from 'framer-motion';
 import { Button as ShadcnButton } from '@/components/ui/button';
-import { ButtonProps } from '@radix-ui/react-menubar';
+import { ButtonProps as ShadcnButtonProps } from '@/components/ui/button';
 
-interface AnimatedButtonProps extends ButtonProps {
+interface AnimatedButtonProps extends Omit<ShadcnButtonProps, 'asChild'> {
   children: ReactNode;
   className?: string;
   onClick?: () => void;
   disabled?: boolean;
   variant?: 'default' | 'primary' | 'outline';
+  asChild?: boolean;
 }
 
 const AnimatedButton = ({ 
@@ -18,6 +19,7 @@ const AnimatedButton = ({
   onClick,
   disabled = false,
   variant = 'default',
+  asChild = false,
   ...props
 }: AnimatedButtonProps) => {
   let buttonClass = '';
@@ -40,6 +42,7 @@ const AnimatedButton = ({
         onClick={onClick}
         disabled={disabled}
         className={`${buttonClass} ${className} shadow-none`}
+        asChild={asChild}
         {...props}
       >
         {children}
